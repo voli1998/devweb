@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Adicionar Conteúdo</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Admin - Adicionar Conteúdo</h2>
+        <form method="post" enctype="multipart/form-data">
+            <label for="title">Título:</label>
+            <input type="text" id="title" name="title" required>
+            <br>
+            <label for="content">Conteúdo:</label>
+            <textarea id="content" name="content" required></textarea>
+            <br>
+            <label for="file">Imagem:</label>
+            <input type="file" id="file" name="file">
+            <br>
+            <label for="video">Vídeo:</label>
+            <input type="file" id="video" name="video">
+            <br><br>
+            <button type="submit">Adicionar Conteúdo</button>
+        </form>
+        <br>
+        <a href="{{ url_for('home') }}" class="button">Voltar para Home</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bíblia</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Bíblia</h2>
+        <ul>
+            {% for book in books %}
+                <li><a href="{{ url_for('bible_book', book=book['book']) }}">{{ book['book'] }}</a></li>
+            {% endfor %}
+        </ul>
+        <br>
+        <a href="{{ url_for('home') }}" class="button">Voltar para Home</a>
+    </div>
+</body>
+</html>

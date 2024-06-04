@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bíblia - {{ book }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>{{ book }}</h2>
+        <ul>
+            {% for chapter in chapters %}
+                <li><a href="{{ url_for('bible_chapter', book=book, chapter=chapter['chapter']) }}">Capítulo {{ chapter['chapter'] }}</a></li>
+            {% endfor %}
+        </ul>
+        <br>
+        <a href="{{ url_for('bible') }}" class="button">Voltar para livros</a>
+        <br>
+        <a href="{{ url_for('home') }}" class="button">Voltar para Home</a>
+    </div>
+</body>
+</html>
